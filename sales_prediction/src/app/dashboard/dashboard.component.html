@@ -1,0 +1,43 @@
+<div class="heading">
+  Sales Forecast Application
+</div>
+<div class="container">
+  <div class="sample">
+    <label id="select">Select Period  : </label>
+    <mat-radio-group [(ngModel)]="period">
+      <mat-radio-button value="weeks">Weeks</mat-radio-button><span> </span>
+      <mat-radio-button value="months">Months</mat-radio-button><span> </span>
+      <mat-radio-button value="year">Year</mat-radio-button>
+    </mat-radio-group>
+    <br><br>
+    Enter no of {{period}}: <input type="text" name="user_time" id="usrTime" [(ngModel)]="Time" style="height: 30px;">
+    <br><br>
+    <mat-card class="card" style="width:450px ;height: 50px;margin-left:15%;">
+        <mat-form-field>
+          <input [hidden]="true" (change)="onFileSelect($event)" type="file" accept=".csv" #fileSelect>
+          <input readonly matInput [(ngModel)]="filename" placeholder="Select file..."/>
+          <button *ngIf="this.file" (click)="deleteFile(); fileSelect.value='';" matSuffix matTooltip="Remove selected file"
+                  [matTooltipPosition]="'above'" type="button" color="warn" mat-icon-button><mat-icon>close</mat-icon></button>
+
+          <button matSuffix mat-icon-button (click)="fileSelect.click();"  matTooltip="Select a file" [matTooltipPosition]="'above'">
+            <mat-icon>file_upload</mat-icon></button> 
+        </mat-form-field>
+      <button (click)="fileUpload()" mat-flat-button style="background-color: #3d973d; color: #ffff; min-height: 40px;">
+        <span *ngIf="!showLoader">Send</span>
+        <mat-spinner style="margin-left: 43%;" diameter="25" strokeWidth="4" *ngIf="showLoader"></mat-spinner>
+      </button>
+    </mat-card>
+  </div>  
+</div>
+<br><br>
+<div class="graph">
+  <h1 class="heading" style="width:350px ;">Resultant Graph</h1>
+  <button mat-button (click)="imageSource()">PREDICTION vs ACTUAL GRAPH</button><br>
+  <img [src]="url" *ngIf="hidden" /> 
+<br>
+  <button mat-button (click)="imageSource1()">FORECASTED GRAPH</button><br>
+  <img [src]="url1" *ngIf="hidden1" />  
+</div>
+  
+
+

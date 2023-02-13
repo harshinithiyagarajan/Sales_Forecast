@@ -1,0 +1,35 @@
+.container{
+    height: 500px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+    margin: 20px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 25px;    
+    background-color: antiquewhite;
+    background-image:url("/assets/images/image1.png ");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.sample{
+    background-color: aliceblue;
+    width: 40%;
+    height: 30%;
+    position: absolute;
+    right: 0%;
+    margin: 50px 70px 0px 0px;
+    padding: 30px;
+    border-radius: 10px
+}
+.heading{
+    text-align: center;
+    background-color: rgb(134, 212, 15);
+    background-image: linear-gradient(white,rgb(134,212,15),white);
+    border-radius: 0px 0px 10px 10px;
+    color: black;
+    font-weight: bolder;
+    font-size: xxx-large;
+    font-style: italic;
+    padding: 40px;
+    font-family: 'Times New Roman', Times, serif;
+}
